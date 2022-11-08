@@ -1,0 +1,19 @@
+server:
+  port: 8070
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/praticando-incorporando-classe
+    username: postgres
+    password: vini4222
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      jdbc:
+        lob.non-contextual-creation: true
+    properties:
+      hibernate:
+        show_sql: true
+
+
