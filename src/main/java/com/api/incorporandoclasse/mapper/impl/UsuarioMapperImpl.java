@@ -8,10 +8,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class UsuarioMapperImpl implements UsuarioMapper {
+
     @Override
     public UsuarioModel toUsuarioModel(UsuarioDto userDto) {
         UsuarioModel usuario = new UsuarioModel();
-        BeanUtils.copyProperties(usuario, userDto);
+        BeanUtils.copyProperties(userDto, usuario);
         return usuario;
     }
 }

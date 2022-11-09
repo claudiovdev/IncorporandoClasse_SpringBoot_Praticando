@@ -6,6 +6,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
@@ -31,9 +32,9 @@ public class UsuarioModel {
     private StatusDoUsuario status;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private LocalDate dataDeCriacao;
+    private LocalDateTime dataDeCriacao;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'")
-    private LocalDate dataDeAtualizacao;
+    private LocalDateTime dataDeAtualizacao;
 
 }

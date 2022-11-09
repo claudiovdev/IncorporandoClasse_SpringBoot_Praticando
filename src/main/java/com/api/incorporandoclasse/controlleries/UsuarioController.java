@@ -7,9 +7,10 @@ import com.api.incorporandoclasse.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -21,9 +22,19 @@ public class UsuarioController {
     @Autowired
     UsuarioService service;
 
-    public ResponseEntity<Object> cadastrarUsuario(@RequestBody UsuarioDto userDto){
+    @PostMapping
+    public ResponseEntity<UsuarioModel> cadastrarUsuario(@RequestBody UsuarioDto userDto){
         UsuarioModel usuario = mapper.toUsuarioModel(userDto);
         usuario = service.salvar(usuario);
         return ResponseEntity.status(HttpStatus.CREATED).body(usuario);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<UsuarioModel>> listarUsuarios(){
+        List<UsuarioModel> listaDeUsuarios = service.listar();
+        if(listaDeUsuarios.isEmpty()){
+            ResponseEntity.status(HttpStatus.NOT_FOUND).body("Não existe nenhum usuário cadastrado");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(listaDeUsuarios);
     }
 }

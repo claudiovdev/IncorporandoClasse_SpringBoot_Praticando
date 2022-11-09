@@ -8,6 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioServiceImpl implements UsuarioService {
@@ -17,9 +20,16 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public UsuarioModel salvar(UsuarioModel usuario) {
-        usuario.setDataDeCriacao(LocalDate.now());
-        usuario.setDataDeAtualizacao(LocalDate.now());
+        usuario.setDataDeCriacao(LocalDateTime.now());
+        usuario.setDataDeAtualizacao(LocalDateTime.now());
         usuario.setStatus(StatusDoUsuario.ATIVO);
         return repository.save(usuario);
     }
+
+    @Override
+    public List<UsuarioModel> listar() {
+        return repository.findAll();
+    }
+
+
 }
