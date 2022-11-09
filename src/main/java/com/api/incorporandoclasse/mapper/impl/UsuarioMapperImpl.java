@@ -1,6 +1,6 @@
 package com.api.incorporandoclasse.mapper.impl;
 
-import com.api.incorporandoclasse.Dtos.UsuarioDto;
+import com.api.incorporandoclasse.dtos.UsuarioDto;
 import com.api.incorporandoclasse.mapper.UsuarioMapper;
 import com.api.incorporandoclasse.models.UsuarioModel;
 import org.springframework.beans.BeanUtils;

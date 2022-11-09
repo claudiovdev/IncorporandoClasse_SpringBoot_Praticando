@@ -1,6 +1,6 @@
 package com.api.incorporandoclasse.controlleries;
 
-import com.api.incorporandoclasse.Dtos.UsuarioDto;
+import com.api.incorporandoclasse.dtos.UsuarioDto;
 import com.api.incorporandoclasse.mapper.UsuarioMapper;
 import com.api.incorporandoclasse.models.UsuarioModel;
 import com.api.incorporandoclasse.services.UsuarioService;
@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/usuarios")

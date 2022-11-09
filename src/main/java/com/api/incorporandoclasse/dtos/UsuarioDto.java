@@ -1,8 +1,6 @@
-package com.api.incorporandoclasse.Dtos;
+package com.api.incorporandoclasse.dtos;
 
 import lombok.Data;
-
-import javax.persistence.Column;
 
 @Data
 public class UsuarioDto {
