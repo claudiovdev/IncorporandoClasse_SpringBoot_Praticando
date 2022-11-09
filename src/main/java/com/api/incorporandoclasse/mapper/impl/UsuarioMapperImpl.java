@@ -12,7 +12,7 @@ public class UsuarioMapperImpl implements UsuarioMapper {
     @Override
     public UsuarioModel toUsuarioModel(UsuarioDto userDto) {
         UsuarioModel usuario = new UsuarioModel();
-        BeanUtils.copyProperties(userDto, usuario);
+        BeanUtils.copyProperties(userDto, usuario, "endereco");
         return usuario;
     }
 }

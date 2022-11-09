@@ -25,6 +25,9 @@ public class UsuarioModel {
     @Column(nullable = false, length = 100)
     private String nome;
 
+    @Embedded
+    Endereco endereco;
+
     @Column(nullable = false, length = 100)
     private String email;
 
